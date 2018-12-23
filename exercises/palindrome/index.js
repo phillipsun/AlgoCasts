@@ -7,6 +7,35 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+function palindrome(str) {
+  // reverse a string and set it to a constant
+  const reversed = str
+    .split("")
+    .reverse()
+    .join("");
+
+  // compare original string with reversed string
+  return str === reversed;
+}
 
 module.exports = palindrome;
+
+// Solution #1
+// function palindrome(str) {
+//   // reverse a string and set it to a constant
+//   const reversed = str
+//     .split("")
+//     .reverse()
+//     .join("");
+
+//   // compare original string with reversed string
+//   return str === reversed;
+// }
+
+// Solution #2
+// Not an ideal solution but it works and makes use of array helper method .every()
+// function palindrome(str) {
+//   return str.split("").every((char, i) => {
+//     return char === str[str.length - i - 1];
+//   });
+// }
